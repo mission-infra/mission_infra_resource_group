@@ -22,11 +22,6 @@ jobs:
           tenant-id: ${{secrets.AZURE_TENANT_ID}}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           
-      - name: Terraform Innstall
-        uses: hashicorp/setup-terraform@v3
-        with: 
-         terraform_version: "1.13.0"
-
       - name: Terraform Init
         id: init
         run: terraform init -input=false
